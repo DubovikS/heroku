@@ -4,6 +4,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:11-jre-slim
-COPY --from=build /app/target/myapp.jar /heroku.jar
+COPY --from=build /app/target/heroku.jar /heroku.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/myapp.jar"]
+CMD ["java", "-jar", "/heroku.jar"]
